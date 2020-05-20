@@ -16,6 +16,6 @@ MonoBehaviour:
   InitializationType: 1
   EditorAppKey: application.generated.unity.legacy.physicsthingy.1419679616.exe
   IsLegacy: 1
-  ActionManifestFileRelativeFilePath: D:/Projects/Unity/PhysicsThingy/Assets/StreamingAssets\SteamVR\legacy_manifest.json
+  ActionManifestFileRelativeFilePath: D:/Projects/Unity/New-Vesta/Assets/StreamingAssets\SteamVR\legacy_manifest.json
   MirrorViewMode: 3
   HasCopiedDefaults: 0
