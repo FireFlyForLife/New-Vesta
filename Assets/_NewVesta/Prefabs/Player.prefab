@@ -365,8 +365,7 @@ MonoBehaviour:
   m_ActivateUsage: 2
   m_UIPressUsage: 2
   m_AxisToPressThreshold: 0.1
-  m_ModelPrefab: {fileID: 5895618154730397656, guid: ae3f3c73ce35beb4481164c64023cd11,
-    type: 3}
+  m_ModelPrefab: {fileID: 0}
   m_ModelTransform: {fileID: 0}
   m_AnimateModel: 0
   m_ModelSelectTransition: 
@@ -396,8 +395,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3157279384125279997}
-  - component: {fileID: 4278888156960023944}
   - component: {fileID: 2220484672822910888}
+  - component: {fileID: 8508310776242270753}
   m_Layer: 0
   m_Name: Right Hand
   m_TagString: Untagged
@@ -421,19 +420,6 @@ Transform:
   m_Father: {fileID: 3157279384174799945}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!65 &4278888156960023944
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3157279384125279998}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!54 &2220484672822910888
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -450,6 +436,20 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!114 &8508310776242270753
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3157279384125279998}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e915ed72d13d29047b33c438ec998810, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  targetRigidbody: {fileID: 3157279384069630450}
+  thisRigidbody: {fileID: 0}
 --- !u!1 &3157279384174799946
 GameObject:
   m_ObjectHideFlags: 0
@@ -604,6 +604,7 @@ GameObject:
   - component: {fileID: 3157279385054824773}
   - component: {fileID: 3157279385054824779}
   - component: {fileID: 3157279385054824772}
+  - component: {fileID: 7979319955061889201}
   m_Layer: 0
   m_Name: Right Hand Model
   m_TagString: Untagged
@@ -672,6 +673,19 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+--- !u!65 &7979319955061889201
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3157279385054824774}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1, y: 1, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &3157279385152417729
 GameObject:
   m_ObjectHideFlags: 0
@@ -681,8 +695,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3157279385152417728}
-  - component: {fileID: 3157279385152417732}
   - component: {fileID: 3157279385152417733}
+  - component: {fileID: 1970413891158807222}
   m_Layer: 0
   m_Name: Left Hand
   m_TagString: Untagged
@@ -706,19 +720,6 @@ Transform:
   m_Father: {fileID: 3157279384174799945}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!65 &3157279385152417732
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3157279385152417729}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!54 &3157279385152417733
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -735,6 +736,20 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!114 &1970413891158807222
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3157279385152417729}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e915ed72d13d29047b33c438ec998810, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  targetRigidbody: {fileID: 3157279385158982522}
+  thisRigidbody: {fileID: 0}
 --- !u!1 &3157279385158982516
 GameObject:
   m_ObjectHideFlags: 0
@@ -819,6 +834,7 @@ GameObject:
   - component: {fileID: 3157279385218264512}
   - component: {fileID: 3157279385218264518}
   - component: {fileID: 3157279385218264519}
+  - component: {fileID: 5366766346472834774}
   m_Layer: 0
   m_Name: Left Hand Model
   m_TagString: Untagged
@@ -887,3 +903,16 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+--- !u!65 &5366766346472834774
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3157279385218264513}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1, y: 1, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}

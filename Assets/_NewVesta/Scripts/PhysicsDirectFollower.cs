@@ -12,13 +12,14 @@ public class PhysicsDirectFollower : MonoBehaviour
 
     void Start()
     {
-        thisRigidbody = thisRigidbody ?? GetComponent<Rigidbody>();
+        if(!thisRigidbody)
+            thisRigidbody = GetComponent<Rigidbody>();
     }
 
     void FixedUpdate()
     {
-        Vector3 deltaMovement = thisRigidbody.position - targetRigidbody.position;
-        targetRigidbody.velocity = deltaMovement / Time.fixedDeltaTime;
+        Vector3 deltaMovement = targetRigidbody.position - thisRigidbody.position;
+        thisRigidbody.velocity = deltaMovement / Time.fixedDeltaTime;
 
         Quaternion deltaRotation = transform.rotation * Quaternion.Inverse(targetRigidbody.rotation);
         Vector3 deltaRotationEuler = deltaRotation.eulerAngles;
