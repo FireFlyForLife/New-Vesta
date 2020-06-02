@@ -14,6 +14,8 @@ public class PhysicsDirectFollower : MonoBehaviour
     {
         if(!thisRigidbody)
             thisRigidbody = GetComponent<Rigidbody>();
+
+        thisRigidbody.maxAngularVelocity = 20f;
     }
 
     void FixedUpdate()
@@ -21,7 +23,7 @@ public class PhysicsDirectFollower : MonoBehaviour
         Vector3 deltaMovement = targetRigidbody.position - thisRigidbody.position;
         thisRigidbody.velocity = deltaMovement / Time.fixedDeltaTime;
 
-        Quaternion deltaRotation = transform.rotation * Quaternion.Inverse(targetRigidbody.rotation);
+        Quaternion deltaRotation = targetRigidbody.rotation * Quaternion.Inverse(thisRigidbody.rotation);
         Vector3 deltaRotationEuler = deltaRotation.eulerAngles;
         Vector3 eulerRotation = new Vector3(Mathf.DeltaAngle(0, deltaRotationEuler.x), Mathf.DeltaAngle(0, deltaRotationEuler.y), Mathf.DeltaAngle(0, deltaRotationEuler.z));
         eulerRotation *= 0.95f * Mathf.Deg2Rad;
