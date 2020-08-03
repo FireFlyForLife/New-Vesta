@@ -373,7 +373,11 @@ namespace UnityEngine.XR.Interaction.Toolkit
         {
             var attachTransform = m_AttachTransform ? m_AttachTransform : transform;
             var attachPosition = m_AttachTransform ? m_AttachTransform.position : m_RigidBody.worldCenterOfMass;
-            var attachOffset = m_RigidBody.worldCenterOfMass - attachPosition;
+            // Start modification by Maiko...
+            // FIX: WTF is this shit? the unity implementation has the subtraction order reversed???
+            // var attachOffset = m_RigidBody.worldCenterOfMass - attachPosition;
+            var attachOffset = attachPosition - m_RigidBody.worldCenterOfMass;
+            // End modification by Maiko!
             var localAttachOffset = attachTransform.InverseTransformDirection(attachOffset);
 
             var inverseLocalScale = interactor.attachTransform.lossyScale;            
