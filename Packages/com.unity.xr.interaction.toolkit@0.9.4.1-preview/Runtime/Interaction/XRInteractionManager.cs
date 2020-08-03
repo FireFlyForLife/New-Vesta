@@ -193,9 +193,11 @@ namespace UnityEngine.XR.Interaction.Toolkit
             }
 		}
 
-		internal XRBaseInteractable TryGetInteractableForCollider(Collider collider)
+        // Start modification by Maiko...
+        public XRBaseInteractable TryGetInteractableForCollider(Collider collider)
+        // End modification by Maiko!
 		{
-			XRBaseInteractable interactable;
+            XRBaseInteractable interactable;
             if (collider != null && m_ColliderToInteractableMap.TryGetValue(collider, out interactable))
                 return interactable;
             
