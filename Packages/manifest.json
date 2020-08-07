@@ -1,5 +1,6 @@
 {
   "dependencies": {
+    "com.malee.reorderablelist": "https://github.com/cfoulston/Unity-Reorderable-List.git",
     "com.unity.collab-proxy": "1.2.16",
     "com.unity.editorcoroutines": "1.0.0",
     "com.unity.ide.rider": "1.1.4",
@@ -50,6 +51,10 @@
     "com.valve.openvr": {
       "revision": "UnityXRPlugin",
       "hash": "db9e35089d6c1d7b7c4846b7ca5fe25c47163482"
+    },
+    "com.malee.reorderablelist": {
+      "revision": "HEAD",
+      "hash": "ac1f508240fb752b1f9d7c222c231d7f2a33df87"
     }
   }
 }

@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
 using UnityEditor;
-
+using Malee.List;
 
 [CustomEditor(typeof(Lever))]
 public class LeverEditor : Editor
@@ -13,13 +13,27 @@ public class LeverEditor : Editor
 
     private SerializedProperty hinge;
     private SerializedProperty callbacks;
+    private ReorderableList callbackList;
     private SerializedProperty leverStateDistribution;
 
     void OnEnable()
     {
         hinge = serializedObject.FindProperty("hinge");
         callbacks = serializedObject.FindProperty("leverStateCallbacks");
+        callbackList = new ReorderableList(callbacks);
+        callbackList.drawElementBackgroundCallback += CallbackList_drawElementBackgroundCallback;
         leverStateDistribution = serializedObject.FindProperty("leverStateDistribution");
+    }
+
+    private void CallbackList_drawElementBackgroundCallback(Rect rect, SerializedProperty element, GUIContent label, bool selected, bool focused)
+    {
+        Color bgColor =
+            GuiCascadeUtils.kCascadeColors[callbackList.IndexOf(element) % GuiCascadeUtils.kCascadeColors.Length];
+        
+        if (selected) 
+            bgColor.a = 0.5f;
+        
+        EditorGUI.DrawRect(rect, bgColor);
     }
 
     public override void OnInspectorGUI()
@@ -31,11 +45,11 @@ public class LeverEditor : Editor
 
         EditorGUILayout.Separator();
 
-        EditorGUILayout.LabelField("Callbacks:", EditorStyles.boldLabel);
-        EditorGUILayout.PropertyField(callbacks);
+        //EditorGUILayout.LabelField("Callbacks:", EditorStyles.boldLabel);
+        callbackList.DoLayoutList();
         SyncArraySize(callbacks, leverStateDistribution);
 
-        EditorGUILayout.LabelField("Distribution:");
+        EditorGUILayout.LabelField("Distribution:", EditorStyles.boldLabel);
         float[] floatDistribution = GetFloatArray(leverStateDistribution);
         GuiCascadeUtils.HandleCascadeSliderGUI(ref floatDistribution, ref dragCache);
         SyncFloatArrayBack(leverStateDistribution, floatDistribution);
